@@ -10,13 +10,13 @@ UserInterface user_interface{&software_serial};
 void setup() {
   software_serial.begin(9600);
   software_serial.println("starting demo...");
-  user_interface.begin()M;
+  user_interface.begin();
   solver.begin();
 }
 
 void readCommand(const Command& command){
   software_serial.println(command.type == SERVO_COMMAND);
-  for(int i = 0; i < N_JOINTS; i++){
+  for(int i = 0; i < N_JOINTS;  i++){
     software_serial.println(command.data.servo_command.servo_delta[i]);
   }
 }
