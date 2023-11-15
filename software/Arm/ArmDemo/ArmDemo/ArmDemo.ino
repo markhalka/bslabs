@@ -3,7 +3,6 @@
 #include <ControlMessage.h>
 // #include <SoftwareSerial.h>
 
-
 Solver solver{&Serial1};
 UserInterface user_interface{&Serial1};
 
