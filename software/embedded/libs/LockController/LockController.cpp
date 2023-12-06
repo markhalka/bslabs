@@ -1,4 +1,4 @@
-#include "SolenoidController.h"
+#include "LockController.h"
 #include <Arduino.h>
 #include <ActionMessage.h>
 
@@ -10,16 +10,16 @@
 #define OTHER_MIN 20
 #define OTHER_MAX 100
 
-SolenoidController::SolenoidController() {}
+LockController::LockController() {}
 
-void SolenoidController::begin() {
+void LockController::begin() {
 	self_servo.attach(SELF_SOLENOID_PIN);
 	other_servo.attach(OTHER_SOLENOID_PIN);
 	self_servo.write(SELF_MIN);
 	other_servo.write(OTHER_MIN);
 }
 
-bool SolenoidController::executeAction(uint8_t action) {
+bool LockController::executeAction(uint8_t action) {
 	switch (action) {
 	case LOCK_SELF:
 		self_servo.write(SELF_MAX);
