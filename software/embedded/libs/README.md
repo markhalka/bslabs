@@ -31,8 +31,15 @@
 * When a command is recieved to actuate one of the locks on the assembly module, it actuates the correct servo
 
 ## Solver:
-* 
+* This code gets a command, creats a plan, and executes it
 
 # Library Interactions:
+main.ino works as follows:
+1. user_interface: recieves a command (for now from the UI)
+2. the command is passed to solver
+3. solver creates a plan or an action
+4. this plan or action is passed to servo_controller
+5. servo_controller sends commands to the servos, or the assembly module microcontroller
+
 
 
