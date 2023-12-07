@@ -23,7 +23,6 @@ public class MovingAverage
     {
         values.Add(value);
 
-        // Trim the list to the specified window size
         if (values.Count > windowSize)
         {
             values.RemoveAt(0);
@@ -37,7 +36,6 @@ public class MovingAverage
             throw new InvalidOperationException("No values to calculate average.");
         }
 
-        // Calculate the average Vector3
         Vector3 sum = values.Aggregate((acc, v) => acc + v);
         return sum / values.Count;
     }

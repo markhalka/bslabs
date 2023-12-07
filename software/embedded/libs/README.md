@@ -35,11 +35,13 @@
 
 # Library Interactions:
 main.ino works as follows:
-1. user_interface: recieves a command (for now from the UI)
-2. the command is passed to solver
-3. solver creates a plan or an action
-4. this plan or action is passed to servo_controller
-5. servo_controller sends commands to the servos, or the assembly module microcontroller
+1. **user_interface** recieves a command (for now from the UI)
+2. the command is passed to **solver**
+3. **solver** creates a plan or an action
+4. this plan or action is passed to **servo_controller**
+5. **servo_controller** sends commands to the servos, or the assembly module microcontroller 
+6. the assembly module microcontroller also uses the **Comms** library to check if a message has been passed to it
+7. if so, it uses the **LockController** library, to actuate the correct lock, and sends a confirmation back
 
 
 

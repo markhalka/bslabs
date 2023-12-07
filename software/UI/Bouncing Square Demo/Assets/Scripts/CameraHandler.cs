@@ -27,7 +27,6 @@ public class CameraHandler : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("here, and setting it to false!");
         moving_average = new MovingAverage(window_size);
     }
 
@@ -35,7 +34,6 @@ public class CameraHandler : MonoBehaviour
     {
         if (!reference_marker.activeSelf || !target_marker.activeSelf)
         {
-            // Debug.Log("one of the markers not found");
             return;
         }
         Vector3 position_delta = target_marker.transform.position - reference_marker.transform.position;
